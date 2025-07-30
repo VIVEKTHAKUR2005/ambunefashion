@@ -1,0 +1,188 @@
+/* styles.css - Enhanced for */
+
+/* Global styles */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+header {
+    background-color: #000000;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: #ffcc00;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns per row */
+    gap: 20px;
+    padding: 40px;
+    justify-items: center;
+}
+
+.product {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 320px;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+input[type="submit"], button {
+    background: #000000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+input[type="submit"]:hover, button:hover {
+    background: #333355;
+}
+
+footer {
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Login page */
+.login-box {
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    margin: auto;
+    margin-top: 10vh;
+}
+
+.login-box input {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav a {
+        margin-left: 0;
+        margin-right: 15px;
+    }
+
+    .products {
+        padding: 20px;
+        grid-template-columns: repeat(2, 1fr); /* 2 columns per row on smaller screens */
+    }
+
+    .product {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .products {
+        grid-template-columns: 1fr; /* 1 column per row on very small screens */
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    header nav a {
+        margin-left: 15px;
+    }
+}
+
+/* Dark mode toggle (basic idea) */
+.dark-mode {
+    background-color: #121212;
+    color: #eee;
+}
+
+.dark-mode header,
+.dark-mode footer {
+    background-color: #000;
+    color: #fff;
+}
+
+.dark-mode .product {
+    background-color: #1e1e1e;
+}
+
+.dark-mode input[type="submit"],
+.dark-mode button {
+    background: #ffcc00;
+    color: #000;
+}
+
+.dark-mode input[type="submit"]:hover,
+.dark-mode button:hover {
+    background: #ffdd33;
+}
+
+/* Proceed to Pay Button Styling */
+.pay-button-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.pay-button-container button {
+    background-color: #000;
+    color: #fff;
+    padding: 12px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.pay-button-container button:hover {
+    background-color: #444;
+    transform: translateY(-2px);
+}

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ambune Fashion</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+      body {
+        font-family: 'Segoe UI', sans-serif;
+        margin: 0;
+        background: #f8f8f8;
+        color: #333;
+        padding: 0;
+      }
+
+      .banner {
+        width: 100vw;
+        overflow: hidden;
+        margin: 0;
+      }
+
+      .banner img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+       
+      }
+      .banner1{
+  display: flex;
+  width: 100vw; /* Full viewport width */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.banner1 img {
+  width: 50vw; /* Each image takes half screen width */
+  height: auto;
+  display: block;
+  margin: 0;
+  padding: 0;
+  object-fit: cover;
+}
+.banner2 {
+  width: 100vw; /* Full width of the viewport */
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.banner2 img {
+  width: 100%;
+  height: 500px; /* Adjust this value to make it thinner/thicker */
+  object-fit: cover;
+  display: block;
+   
+}
+      
+      header {
+        background: #000000;
+        color: #fff;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 2em;
+      }
+
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        margin-left: 20px;
+        font-weight: bold;
+        transition: color 0.3s;
+      }
+
+      nav a:hover {
+        color: #ffcc00;
+      }
+
+      .products {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding: 40px;
+        justify-items: center;
+      }
+
+      .product {
+        background: #fff;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        width: 100%;
+        max-width: 320px;
+      }
+
+      .product:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+      }
+
+      .product img {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 15px;
+      }
+
+      .product h2 {
+        font-size: 1.2em;
+        margin: 10px 0;
+      }
+
+      .product p {
+        font-size: 1em;
+        color: #000000;
+        font-weight: bold;
+      }
+
+      input[type="submit"] {
+        background: #000000;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.3s;
+      }
+
+      input[type="submit"]:hover {
+        background: #ffcc00;
+      }
+
+      input[type="submit"]:active {
+        background: #e5b900;
+      }
+
+      footer {
+        background: #000000;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+        font-size: 0.9em;
+      }
+
+      footer p {
+        margin: 0;
+      }
+
+      /* Responsive Styling */
+      @media (max-width: 768px) {
+        .products {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 480px) {
+        .products {
+          grid-template-columns: 1fr;
+        }
+      }
+      
+  .rating {
+    color: #ffcc00;
+    font-size: 1.2em;
+    margin: 5px 0;
+  }
+</style>
+
+    </style>
+  </head>
+
+  <body>
+    
+    <!-- Top Banner Image -->
+    <header>
+      <h1>Ambune Fashion</h1>
+      <form action="search.php" method="GET" style="display: flex;">
+        <input
+          type="text"
+          name="query"
+          placeholder="Search products..."
+          style="padding: 8px; border: none; border-radius: 4px 0 0 4px; font-size: 1em;"
+        />
+        <button
+          type="submit"
+          style="background-color: #ffcc00; border: none; padding: 8px 12px; border-radius: 0 4px 4px 0; font-weight: bold; cursor: pointer;"
+        >
+        &#128269;
+        </button>
+        </form>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="cart.php">Cart</a>
+      </nav>
+    </header>
+    <section class="banner">
+    
+    <div class="banner img">
+      <img src="images/top-banner.jpg.png" alt="Top Promotional Banner" />
+    </div>
+
+    </section>
+
+    <main>
+      <section class="products">
+        <div class="product">
+          <img src="images/shirt1.jpg.png" alt="Casual Shirt 1" />
+          <h2>Casual White T-Shirt</h2>
+          <p>₹500</p>
+          <div class="rating">★★★★★</div>
+          <form method="POST" action="add_to_cart.php">
+            <input type="hidden" name="product_id" value="1" />
+            <input type="submit" value="Add to Cart" />
+          </form>
+        </div>
+
+        <div class="product">
+          <img src="images/shirt2.jpg.png" alt="Casual Shirt 2" />
+          <h2>Casual Black T-Shirt 2</h2>
+          <p>₹600</p>
+          <div class="rating">★★★★★</div>
+          <form method="POST" action="add_to_cart.php">
+            <input type="hidden" name="product_id" value="2" />
+            <input type="submit" value="Add to Cart" />
+          </form>
+        </div>
+
+        <div class="product">
+          <img src="images/shirt3.jpg.png" alt="Casual Shirt 3" />
+          <h2>Casual Acid Wash T-Shirt 3</h2>
+          <p>₹800</p>
+          <div class="rating">★★★★★</div>
+          <form method="POST" action="add_to_cart.php">
+            <input type="hidden" name="product_id" value="3" />
+            <input type="submit" value="Add to Cart" />
+          </form>
+        </div>
+
+        <div class="product">
+          <img src="images/shirt4.jpg.png" alt="Casual Green Shirt 4" />
+          <h2>Casual Green T-Shirt 4</h2>
+          <p>₹1000</p>
+          <div class="rating">★★★★★</div>
+          <form method="POST" action="add_to_cart.php">
+            <input type="hidden" name="product_id" value="4" />
+            <input type="submit" value="Add to Cart" />
+          </form>
+        </div>
+
+        <div class="product">
+          <img src="images/shirt5.jpg.png" alt="Casual Purple Shirt" />
+          <h2>Casual Purple T-Shirt</h2>
+          <p>₹1000</p>
+          <div class="rating">★★★★★</div>
+          <form method="POST" action="add_to_cart.php">
+            <input type="hidden" name="product_id" value="5" />
+            <input type="submit" value="Add to Cart" />
+          </form>
+        </div>
+
+        <div class="product">
+          <img src="images/shirt6.jpg.png" alt="Casual Grey Shirt" />
+          <h2>Casual Grey T-Shirt</h2>
+          <p>₹1000</p>
+          <div class="rating">★★★★★</div>
+          <form method="POST" action="add_to_cart.php">
+            <input type="hidden" name="product_id" value="6" />
+            <input type="submit" value="Add to Cart" />
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Bottom Banner Image -->
+     <section class="banner1">
+    <div class="banner1 img">
+      <img src="images/bottom-banner.png" alt="Bottom Promotional Banner" />
+      <img src="images/vivek.png" alt="Bottom Promotional Banner" />
+    
+      
+    </div>
+     </section>
+
+    <main>
+      <section class="products">
+        <div class="product">
+          <img src="images/pant1.jpg.png" alt="Brown Baggy Pants" />
+          <h2>Brown Baggy Pants</h2>
+          <p>₹1200</p>
+          <div class="rating">★★★★★</div>
+          <form method="POST" action="add_to_cart.php">
+            <input type="hidden" name="product_id" value="7" />
+            <input type="submit" value="Add to Cart" />
+          </form>
+        </div>
+        <div class="product">
+          <img src="images/pant2.jpg.png" alt="Brown Pants" />
+          <h2>Brown Pants</h2>
+          <p>₹1200</p>
+          <div class="rating">★★★★★</div>
+          <form method="POST" action="add_to_cart.php">
+            <input type="hidden" name="product_id" value="8" />
+            <input type="submit" value="Add to Cart" />
+          </form>
+        </div>
+        <div class="product">
+          <img src="images/pant3.png" alt="White Brown Pants" />
+          <h2>White Brown Pants</h2>
+          <p>₹1200</p>
+          <div class="rating">★★★★★</div>
+          <form method="POST" action="add_to_cart.php">
+            <input type="hidden" name="product_id" value="9" />
+            <input type="submit" value="Add to Cart" />
+          </form>
+        </div>
+        <div class="product">
+          <img src="images/pant4.png" alt="White Pink Pants" />
+          <h2>White Pink Pants</h2>
+          <p>₹1200</p>
+          <div class="rating">★★★★★</div>
+          <form method="POST" action="add_to_cart.php">
+            <input type="hidden" name="product_id" value="10" />
+            <input type="submit" value="Add to Cart" />
+          </form>
+        </div>
+        <div class="product">
+          <img src="images/pant5.png" alt="Grey Black Pants" />
+          <h2>Grey Black Pants</h2>
+          <p>₹1200</p>
+          <div class="rating">★★★★★</div>
+          <form method="POST" action="add_to_cart.php">
+            <input type="hidden" name="product_id" value="11" />
+            <input type="submit" value="Add to Cart" />
+          </form>
+        </div>
+        <div class="product">
+          <img src="images/pant6.png" alt="Black White Pants" />
+          <h2>Black White Pants</h2>
+          <p>₹1200</p>
+          <div class="rating">★★★★★</div>
+          <form method="POST" action="add_to_cart.php">
+            <input type="hidden" name="product_id" value="12" />
+            <input type="submit" value="Add to Cart" />
+          </form>
+        </div>
+
+
+
+
+      </section>
+    </main>
+    <section class="banner2">
+      <div class="banner2 img">
+        <img src="images/Purple And Yellow Playful Discount Banner.png" alt="Bottom Promotional Banner" />
+        
+      
+        
+      </div>
+       </section>
+
+
+    <footer>
+      <p>&copy; 2025 Ambune Fashion. All rights reserved.</p>
+      <p>Contact us: +919890680089</p>
+    </footer>
+  </body>
+</html>
